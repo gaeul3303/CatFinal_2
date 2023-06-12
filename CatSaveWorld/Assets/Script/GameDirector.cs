@@ -8,7 +8,7 @@ public class GameDirector : MonoBehaviour
     GameObject timeText;
     GameObject openNumText;
     float time = 20.0f;
-    int openNum = 15;
+    int openNum = 8;
     // Start is called before the first frame update
     public void OpenCardNum()
     {
