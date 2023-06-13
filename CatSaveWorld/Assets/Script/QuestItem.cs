@@ -26,18 +26,8 @@ public class QuestItem : MonoBehaviour
             && Input.GetMouseButtonDown(0))
         {
             this.itemSlot.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-            //Destroy(this.gameObject);
-            if(name == "Cube")
-            {
-                director.GetComponent<Round01Director>().setItem01();
-                Debug.Log("item01");
-                
-            }
-            else if(name == "Cube2")
-            {
-                director.GetComponent<Round01Director>().setItem02();
-                Debug.Log("item0");
-            }
+            director.GetComponent<Round01Director>().setItem01();
+            Destroy(this.gameObject);
         }
     }
 }
