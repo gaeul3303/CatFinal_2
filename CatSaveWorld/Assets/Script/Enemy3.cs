@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Enemy3 : MonoBehaviour
 {
@@ -126,12 +127,14 @@ public class Enemy3 : MonoBehaviour
     {
         // 엔딩 씬으로 이동 
         Debug.Log("Clear");
+        SceneManager.LoadScene("EndingScene");
     }
 
     void GameOver()
     {
         // GameOver 씬으로 이동
         Debug.Log("Game Over");
+        SceneManager.LoadScene("GameOverScene");
     }
 
     public void HitVillain()
