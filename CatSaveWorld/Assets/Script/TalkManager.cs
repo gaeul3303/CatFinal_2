@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public class TalkManager : MonoBehaviour
     void GenerateData()
     {
         //학생
-        talkData.Add(1000, new string[] { "안녕? 너 혹시 내가 부른 그 고양이야? ", "내가 불러놓고 미안한데... \n 난 지금 대화할 시간이 없어." , "과제를 빨리 내야 하는데 노트북이 사라졌거든. 빨리 찾아야해.", "혹시 날 좀 도와줄 수 있을까? 네가 노트북을 찾아준다면 \n 제보한 내용에 대해 자세히 알려줄게.", "좋다는거지? 그럼 부탁좀 할게",
+        talkData.Add(1000, new string[] { "안녕? 너 혹시 내가 부른 그 고양이야? ", "내가 불러놓고 미안한데... 난 지금 대화할 시간이 없어." , "과제를 빨리 내야 하는데 노트북이 사라졌거든. 빨리 찾아야해.", "혹시 날 좀 도와줄 수 있을까? 네가 노트북을 찾아준다면 \n 제보한 내용에 대해 자세히 알려줄게.", "좋다는거지? 그럼 부탁좀 할게",
         "노트북과 마우스를 찾으면 날 찾아와줘"});
         //학생2
         talkData.Add(1500, new string[] { "진짜 찾아줬구나! 고마워. 이제 제보에 대한 얘기를 해줄게.","얼마 전부터 우리 학교에 있던 고양이들이 사라지기 시작했어.",

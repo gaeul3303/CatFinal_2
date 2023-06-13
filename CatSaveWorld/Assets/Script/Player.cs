@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public DialogueController DlgControl;
     // 회전 속도 
     public float rotSpeed = 200f;
     // 회전 값 변수 
@@ -40,8 +40,8 @@ public class Player : MonoBehaviour
         // 회전값 변수에 마우스 입력 값 만큼 누적 
         mx += mouse_X * rotSpeed * Time.deltaTime;
 
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = DlgControl.isAction ? 0 : Input.GetAxis("Horizontal");
+        float v = DlgControl.isAction ? 0 : Input.GetAxis("Vertical");
 
         //
         Vector3 dir = new Vector3(h, 0, v);
@@ -73,6 +73,12 @@ public class Player : MonoBehaviour
 
         // 이동 속도 맞춰 이동 
         cc.Move(dir * moveSpeed * Time.deltaTime);
+
+    }
+    void OnCollisionStay(Collision collision)
+    {
+        if (Input.GetButtonDown("Jump"))
+            DlgControl.Action(collision.gameObject);
 
     }
 }
