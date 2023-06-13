@@ -6,6 +6,8 @@ public class Round01Director : MonoBehaviour
 {
     bool item01;
     bool item02;
+    bool round01_Clear;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class Round01Director : MonoBehaviour
         {
             //
             Debug.Log("Round01 clear");
+            round01_Clear = true;
             // mpc active
         }
     }

@@ -51,22 +51,8 @@ public class Player : MonoBehaviour
         dir = Camera.main.transform.TransformDirection(dir);
 
 
-        //
-        /*
-        if (cc.collisionFlags == CollisionFlags.Below)
-        {
-            if (isJumping)
-            {
-                isJumping = false;
-                yVelocity = 0;
-            }
-        }*/
-        //
-        if (Input.GetButtonDown("Jump") && !isJumping)
-        {
-            yVelocity = jumpPower;
-            isJumping = true;
-        }
+        //h = DlgControl.isAction ? 0 : Input.GetAxis("Horizontal");        // ??????
+        //v = DlgControl.isAction ? 0 : Input.GetAxis("Vertical");          // ??????
 
         // 캐릭터 수직 속도에 중력 값 적용 
         yVelocity += gravity * Time.deltaTime;
