@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
 
 
         //
+        /*
         if (cc.collisionFlags == CollisionFlags.Below)
         {
             if (isJumping)
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
                 isJumping = false;
                 yVelocity = 0;
             }
-        }
+        }*/
         //
         if (Input.GetButtonDown("Jump") && !isJumping)
         {

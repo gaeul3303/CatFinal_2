@@ -370,6 +370,7 @@
 "Assets/Script/Player.cs"
 "Assets/Script/PlayerController.cs"
 "Assets/Script/QuestItem.cs"
+"Assets/Script/Round01Director.cs"
 "Assets/Script/TalkManager.cs"
 -langversion:8.0
 
