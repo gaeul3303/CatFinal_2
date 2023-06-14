@@ -11,6 +11,10 @@ public class MoveToClass : MonoBehaviour
         {
             SceneManager.LoadScene("ClassScene");
         }
+        else if (this.gameObject.name == "ExitDoor" && collision.gameObject.name == "Player")
+        {
+            SceneManager.LoadScene("MapScene");
+        }
     }
     // Start is called before the first frame update
     void Start()

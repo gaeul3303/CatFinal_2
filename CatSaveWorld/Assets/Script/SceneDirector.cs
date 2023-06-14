@@ -21,13 +21,16 @@ public class SceneDirector : MonoBehaviour
     public void MoveToMapScene()
     {
         SceneManager.LoadScene("MapScene");
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public void MoveToOpeningScnene()
     {
         SceneManager.LoadScene("OpeningScene");
-        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void MoveToPrologueScene()
+    {
+        SceneManager.LoadScene("PrologueScene");
     }
 
 }
