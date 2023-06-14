@@ -7,10 +7,13 @@ public class MoveToClass : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
+        // 밖에서 안으로 들어올 때
         if(this.gameObject.name == "ClassDoor" && collision.gameObject.name == "Player")
         {
             SceneManager.LoadScene("ClassScene");
         }
+
+        // 안에서 밖으로 들어올 때 
         else if (this.gameObject.name == "ExitDoor" && collision.gameObject.name == "Player")
         {
             SceneManager.LoadScene("MapScene");
