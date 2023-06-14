@@ -12,9 +12,14 @@ public class StoneController : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        Enemy3 VM = other.gameObject.GetComponent<Enemy3>();
-        VM.HitVillain();
-        Destroy(this.gameObject);
+        if(other.gameObject.name == "NPC_3")
+        {
+            Enemy3 VM = other.gameObject.GetComponent<Enemy3>();
+            VM.HitVillain();
+            Destroy(this.gameObject);
+
+        }
+        //GetComponent<Rigidbody>().isKinematic = true;
     }
 
     // Start is called before the first frame update

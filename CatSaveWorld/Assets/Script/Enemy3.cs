@@ -45,10 +45,6 @@ public class Enemy3 : MonoBehaviour
     void Update()
     {
 
-        // 시간 측정
-        this.time -= Time.deltaTime;
-        this.timerText.GetComponent<Text>().text = this.time.ToString("F1");
-
         // 슬라이더에 hp를 반영
         hpSlider.value = (float)hp / (float)maxHP;
 
@@ -81,7 +77,7 @@ public class Enemy3 : MonoBehaviour
             m_State = Enemy3State.Run;
         }
 
-        if (this.time <= 0)
+        if (this.time < 0)
         {
             m_State = Enemy3State.GameOver;
             GameOver();
@@ -91,7 +87,11 @@ public class Enemy3 : MonoBehaviour
 
     void Run()
     {
-        if(this.time <= 0)
+        // 시간 측정
+        this.time -= Time.deltaTime;
+        this.timerText.GetComponent<Text>().text = this.time.ToString("F1");
+
+        if (this.time <= 0)
         {
             m_State = Enemy3State.GameOver;
             GameOver();
