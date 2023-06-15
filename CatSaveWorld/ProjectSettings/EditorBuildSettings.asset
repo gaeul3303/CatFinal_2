@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ClassScene.unity
     guid: 4f2a30360d3834b89b4dc8059d884bf3
   - enabled: 1
+    path: Assets/Scenes/Round03Scene.unity
+    guid: a8f8e4efac88e4fc88de25a3c1b55dd6
+  - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 77a161a7e7477435ca856fc85f50581f
   - enabled: 1
