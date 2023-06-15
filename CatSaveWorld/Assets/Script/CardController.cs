@@ -7,6 +7,7 @@ public class CardController : MonoBehaviour
 
     int imgNum = 1;
     bool isOpen = false;
+    int openNum = 15;
     Animator anim;
     GameObject director;
 
@@ -24,7 +25,7 @@ public class CardController : MonoBehaviour
         {
 
             CheckCard();
-            this.director.GetComponent<GameDirector>().OpenCardNum();
+            //this.director.GetComponent<GameDirector>().OpenCardNum();
         }
     }
     void CheckCard()
@@ -37,6 +38,7 @@ public class CardController : MonoBehaviour
             if (tag.Substring(0, 4) == "Card")
             {
                 hit.transform.SendMessage("OpenCard", SendMessageOptions.DontRequireReceiver);
+                this.director.GetComponent<GameDirector>().OpenCardNum();
 
             }
         }
@@ -52,7 +54,7 @@ public class CardController : MonoBehaviour
         int cardNum = int.Parse(transform.tag.Substring(4));
         imgNum = (cardNum + 1) / 2;
         anim.Play("CardOpen");
-
+        openNum--;
         GameManager.cardNum = cardNum;
         GameManager.state = GameManager.STATE.HIT;
 

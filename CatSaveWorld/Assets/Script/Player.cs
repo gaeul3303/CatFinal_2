@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     float mx = 0;
     //
     public float moveSpeed = 7f;
+    public float rotateSpeed = 7.0f;
     // 캐릭터 컨트롤러 변수 
     CharacterController cc;
     // 중력 변수 
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour
         cc = GetComponent<CharacterController>();
 
     }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -44,7 +45,27 @@ public class Player : MonoBehaviour
         //
         Vector3 dir = new Vector3(h, 0, v);
         dir = dir.normalized;
+        //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * rotateSpeed);
+        //transform.LookAt(this.transform);
+        //if(h>0)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0f,0f , 0f));
+        //}
+        //else if(h<0)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
 
+        //}
+        //else if(v>0)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0f, 270f, 0f));
+
+        //}
+        //else if(v<0)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
+
+        //}
         // 카메라 기준으로 방향 변경
         dir = Camera.main.transform.TransformDirection(dir);
 
@@ -58,6 +79,7 @@ public class Player : MonoBehaviour
 
         // 이동 속도 맞춰 이동 
         cc.Move(dir * moveSpeed * Time.deltaTime);
+        //cc.transform.LookAt(cc.transform);
 
     }
     void OnCollisionStay(Collision collision)

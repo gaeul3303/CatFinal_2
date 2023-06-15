@@ -366,11 +366,15 @@
 "Assets/Script/Enemy3.cs"
 "Assets/Script/GameDirector.cs"
 "Assets/Script/GameManager.cs"
+"Assets/Script/MoveToClass.cs"
 "Assets/Script/ObjData.cs"
 "Assets/Script/Player.cs"
 "Assets/Script/PlayerController.cs"
 "Assets/Script/QuestItem.cs"
 "Assets/Script/Round01Director.cs"
+"Assets/Script/SceneDirector.cs"
+"Assets/Script/StoneController.cs"
+"Assets/Script/StoneGenerator.cs"
 "Assets/Script/TalkManager.cs"
 -langversion:8.0
 

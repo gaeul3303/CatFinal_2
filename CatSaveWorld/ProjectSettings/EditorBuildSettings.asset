@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/ClassScene.unity
     guid: 4f2a30360d3834b89b4dc8059d884bf3
   - enabled: 1
+    path: Assets/Scenes/ProfessorScene.unity
+    guid: 9d8908831d266404c9ee896706b73c53
+  - enabled: 1
+    path: Assets/Scenes/Ground02ClearScene.unity
+    guid: d9e642e5f1bf86443a71e28cdeefee31
+  - enabled: 1
     path: Assets/Scenes/Round03Scene.unity
     guid: a8f8e4efac88e4fc88de25a3c1b55dd6
   - enabled: 1

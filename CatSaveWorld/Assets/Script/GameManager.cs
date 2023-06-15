@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class GameManager : MonoBehaviour
     int lastNum = 0;
     //스테이지의 전체 카드 수
     int cardCnt;
-    //카드 클릭 횟수
+    //카드 맞춘 횟수
     int hitCnt = 0;
+    int correctNum = 0;
     //카드배열 카드 섞기용
     int[] arCards = new int[11];
 
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         this.startTime += Time.deltaTime;
-        //StartCoroutine(MakeStage());
+        StartCoroutine(MakeStage());
     }
     // Update is called once per frame
     void Update()
@@ -65,15 +67,21 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(CloseTwoCards());
             lastNum = 0;
+            //openNum--;
             state = STATE.IDLE;
             return;
         }
         hitCnt += 2;
+        //openNum--;
+
+        correctNum++;
         if (hitCnt == cardCnt)
         {
             state = STATE.CLEAR;
+            SceneManager.LoadScene("Ground02ClearScene");
             return;
         }
+        
         lastNum = 0;
         state = STATE.IDLE;
     }
@@ -87,6 +95,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         card1.SendMessage("CloseCard", SendMessageOptions.DontRequireReceiver);
         card2.SendMessage("CloseCard", SendMessageOptions.DontRequireReceiver);
+        //OpenNum--;
 
     }
 
