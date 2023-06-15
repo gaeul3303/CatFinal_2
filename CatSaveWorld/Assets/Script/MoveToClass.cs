@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MoveToClass : MonoBehaviour
 {
+    GameObject target;
     private void OnCollisionEnter(Collision collision)
     {
         // 밖에서 안으로 들어올 때
@@ -16,13 +17,14 @@ public class MoveToClass : MonoBehaviour
         // 안에서 밖으로 들어올 때 
         else if (this.gameObject.name == "ExitDoor" && collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene("MapScene");
+            SceneManager.LoadScene("Round03Scene");
         }
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
