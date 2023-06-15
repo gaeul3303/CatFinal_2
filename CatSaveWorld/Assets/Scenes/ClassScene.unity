@@ -4505,7 +4505,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394157626}
-  m_LocalRotation: {x: 0.0058287857, y: -2.713908e-10, z: 1.5819057e-12, w: 0.999983}
+  m_LocalRotation: {x: 0.0058287857, y: -2.68855e-10, z: 1.5671248e-12, w: 0.999983}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5220,7 +5220,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450073439}
-  m_LocalRotation: {x: -0.023245053, y: 0.000000034413826, z: 1.0577747e-12, w: 0.9997298}
+  m_LocalRotation: {x: -0.023245053, y: -0.000000034413823, z: -1.0576714e-12, w: 0.9997298}
   m_LocalPosition: {x: 8.88, y: 1.0947336, z: -3.6148758}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -11919,7 +11919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1120945542027732132, guid: ef56333ff8a244e4cb58b24e12bb8b7b, type: 3}
       propertyPath: m_Name
-      value: Player02
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1120945542027732132, guid: ef56333ff8a244e4cb58b24e12bb8b7b, type: 3}
       propertyPath: m_Layer
@@ -21239,7 +21239,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764044382}
-  m_LocalRotation: {x: -0.012361357, y: 0.000000017213466, z: 2.1279804e-10, w: 0.9999236}
+  m_LocalRotation: {x: -0.012361357, y: -0.000000017213464, z: -2.1279802e-10, w: 0.9999236}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25777,7 +25777,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132151567}
-  m_LocalRotation: {x: -0.030499395, y: 0.000000017231939, z: 5.2580834e-10, w: 0.9995348}
+  m_LocalRotation: {x: -0.030499395, y: -0.000000017231935, z: -5.2580823e-10, w: 0.9995348}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
