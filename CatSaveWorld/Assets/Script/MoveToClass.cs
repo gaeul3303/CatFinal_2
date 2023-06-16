@@ -9,9 +9,13 @@ public class MoveToClass : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // 밖에서 안으로 들어올 때
-        if(this.gameObject.name == "ClassDoor" && collision.gameObject.name == "Player")
+        if (this.gameObject.name == "ClassDoor" && collision.gameObject.name == "Player")
         {
             SceneManager.LoadScene("ClassScene");
+        }
+        else if (this.gameObject.name == "ClassDoor02" && collision.gameObject.name == "Player")
+        {
+            SceneManager.LoadScene("Ground02ClearScene");
         }
 
         // 안에서 밖으로 들어올 때 
@@ -19,7 +23,7 @@ public class MoveToClass : MonoBehaviour
         {
             SceneManager.LoadScene("Round03Scene");
         }
-        
+
     }
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,6 @@ public class MoveToClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

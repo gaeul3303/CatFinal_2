@@ -36,30 +36,10 @@ public class Player : MonoBehaviour
         float h = DlgControl.isAction ? 0 : Input.GetAxis("Horizontal");
         float v = DlgControl.isAction ? 0 : Input.GetAxis("Vertical");
 
-        //
+        
         Vector3 dir = new Vector3(h, 0, v);
         dir = dir.normalized;
-        //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * rotateSpeed);
-        //transform.LookAt(this.transform);
-        //if(h>0)
-        //{
-        //    transform.rotation = Quaternion.Euler(new Vector3(0f,0f , 0f));
-        //}
-        //else if(h<0)
-        //{
-        //    transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
-
-        //}
-        //else if(v>0)
-        //{
-        //    transform.rotation = Quaternion.Euler(new Vector3(0f, 270f, 0f));
-
-        //}
-        //else if(v<0)
-        //{
-        //    transform.rotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
-
-        //}
+        
         // 카메라 기준으로 방향 변경
         dir = Camera.main.transform.TransformDirection(dir);
 
@@ -67,13 +47,11 @@ public class Player : MonoBehaviour
         if (dir.magnitude >= 0.1f)
         {
             // 회전 값 계산 
-            float Targetangle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            float Targetangle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
             // 카메라 기준으로 플레이어 방향 변경  
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Targetangle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
-
-        
 
         // 캐릭터 수직 속도에 중력 값 적용 
         yVelocity += gravity * Time.deltaTime;
@@ -82,6 +60,8 @@ public class Player : MonoBehaviour
         // 이동 속도 맞춰 이동 
         cc.Move(dir * moveSpeed * Time.deltaTime);
         cc.transform.LookAt(cc.transform);
+
+
 
     }
     void OnCollisionStay(Collision collision)
