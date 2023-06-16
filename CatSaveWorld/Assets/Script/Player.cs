@@ -7,8 +7,6 @@ public class Player : MonoBehaviour
     public DialogueController DlgControl;
     // 회전 속도 
     public float rotSpeed = 200f;
-    // 회전 값 변수 
-    float mx = 0;
     //
     public float moveSpeed = 7f;
     public float rotateSpeed = 7.0f;
@@ -19,6 +17,9 @@ public class Player : MonoBehaviour
     // 수직 속력 변수 
     float yVelocity = 0;
 
+    float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,17 +28,10 @@ public class Player : MonoBehaviour
         cc = GetComponent<CharacterController>();
 
     }
-   
+
     // Update is called once per frame
     void Update()
     {
-
-        //마우스 입력 받기 
-        float mouse_X = Input.GetAxis("Mouse X");
-        float mouse_Y = Input.GetAxis("Mouse Y");
-
-        // 회전값 변수에 마우스 입력 값 만큼 누적 
-        mx += mouse_X * rotSpeed * Time.deltaTime;
 
         float h = DlgControl.isAction ? 0 : Input.GetAxis("Horizontal");
         float v = DlgControl.isAction ? 0 : Input.GetAxis("Vertical");
@@ -69,9 +63,17 @@ public class Player : MonoBehaviour
         // 카메라 기준으로 방향 변경
         dir = Camera.main.transform.TransformDirection(dir);
 
+        // 플레이어 방향 설정 수정사항 
+        if (dir.magnitude >= 0.1f)
+        {
+            // 회전 값 계산 
+            float Targetangle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            // 카메라 기준으로 플레이어 방향 변경  
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Targetangle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        }
 
-        //h = DlgControl.isAction ? 0 : Input.GetAxis("Horizontal");        // ??????
-        //v = DlgControl.isAction ? 0 : Input.GetAxis("Vertical");          // ??????
+        
 
         // 캐릭터 수직 속도에 중력 값 적용 
         yVelocity += gravity * Time.deltaTime;
@@ -79,7 +81,7 @@ public class Player : MonoBehaviour
 
         // 이동 속도 맞춰 이동 
         cc.Move(dir * moveSpeed * Time.deltaTime);
-        //cc.transform.LookAt(cc.transform);
+        cc.transform.LookAt(cc.transform);
 
     }
     void OnCollisionStay(Collision collision)

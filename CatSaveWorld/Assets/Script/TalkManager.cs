@@ -41,12 +41,17 @@ public class TalkManager : MonoBehaviour
     {
         if (talkIndex == talkData[id].Length)
         {
-           if(id==2000)
-           {
+
+            if (id == 2000)
+            {
                 //¾À ÀüÈ¯
                 SceneManager.LoadScene("ProfessorScene");
+                return null;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
         else
             return talkData[id][talkIndex];
