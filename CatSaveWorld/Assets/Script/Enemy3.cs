@@ -31,7 +31,7 @@ public class Enemy3 : MonoBehaviour
     public Slider hpSlider;             //  hp슬라이더 변수
 
     GameObject timerText;
-    float time = 10f;
+    float time = 20f;
 
 
     // Start is called before the first frame update
